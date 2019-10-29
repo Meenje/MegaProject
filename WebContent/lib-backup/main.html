@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="Top1"></div>
+        <div class="Top2"></div>
+        <div class="Top3" style="margin-left: 274px; margin-top: 5px; margin-bottom: 5px;">
+            <input type="text" placeholder="아이디" style="margin-left: 10px; vertical-align: middle;">
+            <input type="text" placeholder="비밀번호" style="margin-left: 3px; vertical-align: middle;">
+            <button type="button" class="btn btn-primary btn-sm">Login</button>
+            <button type="button" class="btn btn-primary btn-sm" id="signupbtn" onclick="showPopup();"
+                style="background-color: #F3969A; border-color: #F3969A;">SignUp</button>
+        </div>
+        <div class="Menu">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">메뉴</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="main.html">Home</a> <!-- current --> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="typical.html">유형별 도서 인기 검색</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" action="http://localhost:8080/bigproject2/jsp/search.jsp">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchitem" name="name">
+                        <input name="page" value="1" type="hidden">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="btn-search">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+        <div class="PopularLoanBook" style="margin-top: 20px; margin-right: 40px; margin-left: 40px">
+            <h2>강남 인기 도서</h2>
+            <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1">Tab One</li>
+                <li class="tab-link" data-tab="tab-2">Tab Two</li>
+                <li class="tab-link" data-tab="tab-3">Tab Three</li>
+                <li class="tab-link" data-tab="tab-4">Tab Four</li>
+            </ul>
+
+            <div id="tab-1" class="tab-content current">
+                <a href="main.html" id="atag1">one</a> <a href="" id="atag2">two</a> <a href="" id="atag3">three</a>
+                <a href="" id="atag4">four</a><br><br>
+                <div id="dimg">
+                    <table id="timg"
+                        style="margin:auto; text-align:center; width:60%; border-spacing: 10px; border-collapse: separate;">
+                    </table>
+                </div>
+            </div>
+            <div id="tab-2" class="tab-content">
+                <a href="main.html" id="atag1">one</a> <a href="" id="atag2">two</a> <a href="" id="atag3">three</a>
+                <a href="" id="atag4">four</a> <br><br>
+            </div>
+            <div id="tab-3" class="tab-content">
+                <a href="main.html" id="atag1">one</a> <a href="" id="atag2">two</a> <a href="" id="atag3">three</a>
+                <a href="" id="atag4">four</a> <br><br>
+            </div>
+            <div id="tab-4" class="tab-content">
+                <a href="main.html" id="atag1">one</a> <a href="" id="atag2">two</a> <a href="" id="atag3">three</a>
+                <a href="" id="atag4">four</a> <br><br>
+            </div>
+        </div>
+
+        <div class="NationalBook" style="margin: 20px">
+            <div class="card border-secondary mb-3">
+                <div class="card-header">전국 인기 도서</div>
+                <div style="margin-top: 10px; margin-right: 10px; margin-left: 10px;">
+                    <label>성별: </label>
+                    <input type="radio" name="gender" value="M" checked>남자
+                    <input type="radio" name="gender" value="F">여자
+                </div>
+                <div style="margin-top: 5px; margin-right: 10px; margin-left: 10px;">
+                    <label for="example">연령</label>
+                    <select id="example" class="autocomplete">
+                        <option value="1">Option one</option>
+                        <option value="2">Option two</option>
+                        <option value="3">Option three</option>
+                        <option value="4">Option four</option>
+                    </select>
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+
+        <div class="PopBook" style="margin-top: 20px">
+            <div class="card border-success mb-3">
+                <div class="card-header">강남 인기 급상승 도서</div>
+                <div class="card-body">
+                    <table id="timg"
+                        style="margin:auto; text-align:center; width:60%;border-spacing: 10px; border-collapse: separate;">
+                        <tr>
+                            <td><img src="../img/book1.jpg" width="160" height="215"></td>
+                            <td><img src="../img/book2.jpg" width="160" height="215"></td>
+                            <td><img src="../img/book1.jpg" width="160" height="215"></td>
+                            <td><img src="../img/book2.jpg" width="160" height="215"></td>
+                            <td><img src="../img/book1.jpg" width="160" height="215"></td>
+                        </tr>
+                        <tr>
+                            <td>책제목1</td>
+                            <td>책제목2</td>
+                            <td>책제목3</td>
+                            <td>책제목4</td>
+                            <td>책제목5</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="NewBook" style="margin-top: 20px">
+            <div class="card border-warning mb-3">
+                <div class="card-header">신간 도서</div>
+                <div style="margin: 10px">
+                    <select id="example" class="autocomplete">
+                        <option value="1">Option one</option>
+                        <option value="2">Option two</option>
+                        <option value="3">Option three</option>
+                    </select>
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

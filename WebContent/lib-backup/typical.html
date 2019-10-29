@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/typical.js"></script>
+    <script src="../js/bookontherun.js"></script>
+    <script src="../js/leftside.js"></script>
+    <script>function showPopup() { window.open("signup.html", "a", "width=400, height=550, left=800, top=150"); }</script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/typical.css">
+    <style>
+        .btn-outline-primary.disabled,
+        .btn-outline-primary:disabled,
+        .btn-outline-secondary.disabled,
+        .btn-outline-secondary:disabled,
+        .btn-outline-warning.disabled,
+        .btn-outline-warning:disabled {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="Top1"></div>
+        <div class="Top2"></div>
+        <div class="Top3" style="margin-left: 274px; margin-top: 5px; margin-bottom: 5px;">
+            <input type="text" placeholder="아이디" style="margin-left: 10px; vertical-align: middle;">
+            <input type="text" placeholder="비밀번호" style="margin-left: 3px; vertical-align: middle;">
+            <button type="button" class="btn btn-primary btn-sm">Login</button>
+            <button type="button" class="btn btn-primary btn-sm" id="signupbtn" onclick="showPopup();"
+                style="background-color: #F3969A; border-color: #F3969A;">SignUp</button>
+        </div>
+        <div class="Menu">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">메뉴</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="main.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="typical.html">유형별 도서 인기 검색</a> <!-- current -->
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" action="http://localhost:8080/bigproject2/lib/search.jsp">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchitem" name="name">
+                        <input name="page" value="1" type="hidden">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="btn-search">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+        <div class="condition" style="margin: 10px;">
+            <div style="background-color: #f7f7f9; border-radius: 0.6rem;">
+                <div style="margin-left: 40px;">
+                    <br>
+                    <h2>유형별 도서 검색하기</h2>
+                </div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 40px;">
+                    <button type="button" class="btn btn-outline-primary active"
+                        style="margin-top: 20px; font-weight: bold;" disabled>성별</button>
+                    <label class="btn btn-primary sexlabel active" id="sexlabel2" style="margin-top: 20px;">
+                        <input type="radio" name="sexs" class="sex-radio" id="sex2" value="male" checked> 남자
+                    </label>
+                    <label class="btn btn-primary sexlabel" id="sexlabel3" style="margin-top: 20px;">
+                        <input type="radio" name="sexs" class="sex-radio" id="sex3" value="female"> 여자
+                    </label>
+                </div>
+
+                <br>
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 40px;">
+                    <button type="button" class="btn btn-outline-secondary active"
+                        style="margin-top: 20px; font-weight: bold;" disabled>연령</button>
+                    <label class="btn btn-secondary agelabel active" id="agelabel2" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="0_5"  id="age2" checked> 0-5세
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel3" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="6_7" id="age3"> 6-7세
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel4" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="8_13" id="age4"> 8-13세
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel5" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="14_19" id="age5"> 14-19세
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel6" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="20" id="age6"> 20대
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel7" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="30" id="age7"> 30대
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel8" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="40" id="age8"> 40대
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel9" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="50" id="age9"> 50대
+                    </label>
+                    <label class="btn btn-secondary agelabel" id="agelabel10" style="margin-top: 20px;">
+                        <input type="radio" name="ages" class="age-radio" value="60" id="age10"> 60대이상
+                    </label>
+                </div>
+
+                <br>
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 40px;">
+                    <button type="button" class="btn btn-outline-warning active"
+                        style="margin-top: 20px; font-weight: bold;" disabled>주제</button>
+                    <label class="btn btn-warning themalabel active" id="themalabel2" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema2" class="thema-radio" value="general" checked> 총류
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel3" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema3" class="thema-radio" value="Philosophy"> 철학
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel4" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema4" class="thema-radio" value="Religion"> 종교
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel5" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema5" class="thema-radio" value="SS"> 사회과학
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel6" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema6" class="thema-radio" value="NS"> 자연과학
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel7" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema7" class="thema-radio" value="TE"> 기술과학
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel8" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema8" class="thema-radio" value="art"> 예술
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel9" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema9" class="thema-radio" value="Language"> 언어
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel10" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema10" class="thema-radio" value="Literature"> 문학
+                    </label>
+                    <label class="btn btn-warning themalabel" id="themalabel11" style="margin-top: 20px;">
+                        <input type="radio" name="themas" id="thema11" class="thema-radio" value="history"> 역사
+                    </label>
+                </div>
+                <br>
+                <div><button type="button" class="btn btn-info" id="btn-ontherun"
+                        style="margin-top: 20px; margin-bottom: 10px; margin-left: 900px;">검색하기</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="result" style="margin: 10px;">
+        </div>
+
+        <div class="leftside" style="margin: 20px;">
+        <div style="overflow-y: auto; position:fixed; margin-left: 23px;">
+			<div class="card mb-3" style="width: 225px; height: auto;">
+  				<h3 class="card-header">강남 신규도서</h3>
+  				<div class="card-body" id="div-gangnam" style="margin-left: 20px; margin-right: 25px; text-align: center;">
+  				</div>
+  			</div>
+  			<div class="card mb-3" style="width: 225px; height: auto;">
+  				<h3 class="card-header">개포 신규도서</h3>
+  				<div class="card-body" id="div-gaepo" style="margin-left: 20px; margin-right: 25px; text-align: center;">
+  				</div>
+  			</div>
+        </div>
+        </div>
+        <div class="rightside">
+            rightside
+        </div>
+    </div>
+</body>
+
+</html>
